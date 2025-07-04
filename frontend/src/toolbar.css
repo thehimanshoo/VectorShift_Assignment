@@ -1,0 +1,22 @@
+.vs-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+  background: #fafafa;
+}
+
+.vs-toolbar-item {
+  padding: 6px 10px;
+  border: 1px solid #666;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 12px;
+  cursor: grab;
+  user-select: none;
+}
+
+.vs-toolbar-item:active {
+  cursor: grabbing;
+}

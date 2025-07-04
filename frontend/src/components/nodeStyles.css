@@ -1,0 +1,29 @@
+.vs-node {
+  min-width: 220px;
+  background: #ffffff;
+  border: 2px solid #555;
+  border-radius: 6px;
+  padding: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  font-size: 12px;
+  position: relative;
+}
+
+.vs-node-header {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.vs-node-body > * {
+  display: block;
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.vs-node-body input,
+.vs-node-body select,
+.vs-node-body textarea {
+  width: 100%;
+  font-size: 12px;
+  box-sizing: border-box;
+}
