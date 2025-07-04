@@ -69,81 +69,56 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-
-
 ## Backend Setup (FastAPI)
 
 ### Prerequisites
+
 - Python 3.7 or higher
 - pip (Python package manager)
 
-### Step 1: Clone the Repository
+### Installation
+
+1. **Clone and navigate to backend**:
+
 ```bash
 git clone https://github.com/thehimanshoo/VectorShift_Assignment.git
 cd VectorShift_Assignment/backend
 
 
-### Step 2: Set Up Virtual Environment
+2: Create and activate virtual environment:
+For Windows:
+    python -m venv venv
+    venv\Scripts\activate
 
-### For Windows:
-python -m venv venv
-venv\Scripts\activate
-
-### For Linux/MacOS:
-python3 -m venv venv
-source venv/bin/activate
-
-
-### Step 3: Install Dependencies
-pip install -r requirements.txt
-
-### (or if you don't have requirements.txt)
-pip install fastapi uvicorn python-multipart
-
-### Step 4: Configure Environment Variables
-touch .env
-
-### Add your environment variables (if any):
-# Example:
-# DATABASE_URL=postgresql://user:password@localhost/dbname
+Linux/MacOS:
+    python3 -m venv venv
+    source venv/bin/activate
 
 
-### Step 5: Run the Backend Server
+3: Install Dependencies:
+    pip install fastapi uvicorn python-multipart
 
-### Development Mode (with auto-reload):
-uvicorn main:app --reload
-
-### Production Mode:
-uvicorn main:app --host 0.0.0.0 --port 8000
-
-The server will be available at:
-http://localhost:8000
+4. Start the development server:
+    uvicorn main:app --reload
+    The API will be available at:
+    http://localhost:8000
 
 
-### Step 6: Verify the Installation
-curl http://localhost:8000
-
-### You should see:
-{"Ping":"Pong"}
-
-#### Key Endpoints
-    GET / - Health check
+5. Key Endpoints
+    GET / - Health check (returns {"Ping":"Pong"})
     POST /pipelines/parse - Pipeline analysis endpoint
 
-### Stopping the Server
-Press Ctrl+C in the terminal where the server is running.
+Stopping the Server
+    -Press Ctrl+C in the terminal
 
-### Additional Commands
-Generate requirements.txt (if needed):
-pip freeze > requirements.txt
+6. Troubleshooting:
+    Port conflicts:
+        # Linux/Mac:
+        lsof -i :8000
 
-## Deactivate Virtual Environment:
-deactivate
+        # Windows:
+        netstat -ano | findstr :8000
 
-### Troubleshooting:
-    If you get port conflicts:
-    lsof -i :8000  # Linux/Mac
-    netstat -ano | findstr :8000  # Windows
-
-### For permission issues (Linux/Mac):
-    chmod +x venv/bin/activate
+    Permission issues (Linux/Mac):
+        chmod +x venv/bin/activate
+```
