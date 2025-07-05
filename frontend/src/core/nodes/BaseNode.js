@@ -1,5 +1,5 @@
 import { Handle, Position } from 'reactflow';
-import './nodeStyles.css';
+import '../styles/nodeStyles.css';
 
 const GAP = 24;
 

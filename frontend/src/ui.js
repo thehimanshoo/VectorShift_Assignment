@@ -1,4 +1,5 @@
 // ui.js
+import 'reactflow/dist/style.css';
 import { useState, useRef, useCallback } from 'react';
 import ReactFlow, { Controls, Background, MiniMap } from 'reactflow';
 import { useStore } from './store';
@@ -10,13 +11,14 @@ import { OutputNode } from './nodes/outputNode';
 import { TextNode }   from './nodes/textNode';
 import { LLMNode }    from './nodes/llmNode';
 
-import { MathNode }   from './nodes/mathNode';
-import { MergeNode }  from './nodes/mergeNode';
-import { FilterNode } from './nodes/filterNode';
+// import { MathNode }   from './nodes/mathNode';
+// import { MergeNode }  from './nodes/mergeNode';
+// import { FilterNode } from './nodes/filterNode';
 import { DelayNode }  from './nodes/delayNode';
-import { AudioNode }  from './nodes/audioNode';
+// import { AudioNode }  from './nodes/audioNode';
+import { nodeCreators } from './core/nodes/nodeGroups';
+// const AudioNode = nodeCreators.audio;
 
-import 'reactflow/dist/style.css';
 
 const gridSize   = 20;
 const proOptions = { hideAttribution: true };
@@ -27,11 +29,12 @@ const nodeTypes = {
   output: OutputNode,
   text:   TextNode,
   llm:    LLMNode,
-  math:   MathNode,
-  merge:  MergeNode,
-  filter: FilterNode,
+  math:   nodeCreators.math,
+  merge:  nodeCreators.merge,
+  filter: nodeCreators.filter,
   delay:  DelayNode,
-  audio:  AudioNode,
+  audio:  nodeCreators.audio,
+  csv: nodeCreators.csv
 };
 
 const selector = (s) => ({

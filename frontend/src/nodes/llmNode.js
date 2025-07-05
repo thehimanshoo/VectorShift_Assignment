@@ -1,4 +1,4 @@
-import BaseNode from '../components/BaseNode';
+import BaseNode from '../core/nodes/BaseNode';
 
 export const LLMNode = ({ id }) => (
   <BaseNode

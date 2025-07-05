@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import BaseNode from '../components/BaseNode';
+import BaseNode from '../core/nodes/BaseNode';
 
 export const InputNode = ({ id, data }) => {
   const [name, setName] = useState(data?.inputName || id.replace('customInput-', 'input_'));
